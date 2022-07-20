@@ -8,13 +8,11 @@ export function JoinPage(props) {
 
   const joinWithUser = (formState) => {
     setUser({ displayName: formState.displayName });
-  }
+  };
 
   return (
     <div className="join-page">
-      <div className="join-page__title">
-        Chat with friends
-      </div>
+      <div className="join-page__title">Chat about Frontend developoment</div>
       <div className="join-page__form">
         <JoinForm onJoin={joinWithUser} />
       </div>

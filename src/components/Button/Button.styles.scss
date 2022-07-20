@@ -11,7 +11,7 @@
 
 .button.button--text {
   @include type($font-weight: 700);
-  @include shape('rounded');
+  @include shape("rounded");
   width: 100%;
   padding: 0 16px;
   color: $color-theme-inverted;
@@ -19,7 +19,7 @@
 }
 
 .button.button--icon {
-  @include shape('round');
+  @include shape("round");
   width: 40px;
 
   path {

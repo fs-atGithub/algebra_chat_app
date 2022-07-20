@@ -8,6 +8,7 @@ export function JoinForm(props) {
     <form
       className="join-form"
       autoComplete="off"
+      autofocus
       onSubmit={props.onSubmit}
     >
       <div className="join-form__field">

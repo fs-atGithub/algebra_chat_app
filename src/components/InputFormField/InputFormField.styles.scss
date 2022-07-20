@@ -5,10 +5,13 @@
   width: 100%;
 
   &__label {
-    @include type($font-size: 1.4rem);
+    @include type($font-size: 2rem);
     display: block;
     width: 100%;
     margin-bottom: 8px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
   }
 
   &__element {
