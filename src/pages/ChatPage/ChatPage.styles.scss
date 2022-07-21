@@ -3,7 +3,7 @@
 .chat-page {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: stretch;
+  justify-content: center;
   align-items: stretch;
   height: 100vh;
   width: calc(100% - #{2 * $size-wrapper-margin});
@@ -32,5 +32,55 @@
   &__form {
     flex: 0 0 auto;
     margin: 16px 0;
+  }
+}
+.spinner-sector {
+  position: absolute;
+  left: 40%;
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 18px solid transparent;
+  mix-blend-mode: overlay;
+  animation: rotate var(--duration) var(--timing) infinite;
+}
+.spinner-sector-red {
+  border-top-color: red;
+
+  --duration: 1s;
+  --timing: ease-in-out;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+p {
+  font-size: 28px;
+}
+.spinner-sector-green {
+  border-left-color: green;
+
+  --duration: 1.5s;
+  --timing: ease-in;
+}
+.spinner-sector-green {
+  border-right-color: blue;
+  --duration: 2s;
+  --timing: ease-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

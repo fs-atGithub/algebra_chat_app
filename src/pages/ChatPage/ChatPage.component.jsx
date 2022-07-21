@@ -5,11 +5,30 @@ import { MessageForm } from "../../components/MessageForm";
 
 export function ChatPage(props) {
   if (props.error !== null) {
-    return <div className="chat-page">Failed to connect to chat room.</div>;
+    return (
+      <div className="chat-page loading-error">
+        <div>
+          <p>Unable to connect...</p>
+          <p>Refresh page to tray again.</p>
+        </div>
+        <div className="spinner-sector spinner-sector-red"></div>
+
+        <div className="spinner-sector spinner-sector-blue"></div>
+        <div className="spinner-sector spinner-sector-green"></div>
+      </div>
+    );
   }
 
   if (!props.joinedRoom) {
-    return <div className="chat-page">Joining room, please wait...</div>;
+    return (
+      <div className="chat-page loading">
+        <p>Loading...</p>
+        <div className="spinner-sector spinner-sector-red"></div>
+
+        <div className="spinner-sector spinner-sector-blue"></div>
+        <div className="spinner-sector spinner-sector-green"></div>
+      </div>
+    );
   }
   const messageItems = props.messages.map((message) => (
     <div key={message.id} className="chat-page__message-list-item">
