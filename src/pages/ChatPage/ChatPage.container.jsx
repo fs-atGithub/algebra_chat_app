@@ -10,6 +10,8 @@ export function ChatPage() {
   const { user } = useUser();
   const [state, setState] = useState([]);
   const [drone, setDrone] = useState(null);
+  const [error, setError] = useState(null);
+  const [joinedRoom, setJoinedRoom] = useState(false);
 
   const sendMessage = (formState) => {
     const message = new MessageModel({
@@ -37,9 +39,9 @@ export function ChatPage() {
 
     room.on("open", (error) => {
       if (error) {
-        return console.error(error);
+        return setError(error);
       }
-      console.log("Connected to room");
+      setJoinedRoom(true);
     });
 
     room.on("message", (message) => {
@@ -52,5 +54,12 @@ export function ChatPage() {
     });
   }, [drone]);
 
-  return <Component messages={state} onSendMessage={sendMessage} />;
+  return (
+    <Component
+      messages={state}
+      onSendMessage={sendMessage}
+      error={error}
+      joinedRoom={joinedRoom}
+    />
+  );
 }
