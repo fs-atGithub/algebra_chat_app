@@ -8,8 +8,8 @@ export function ChatPage(props) {
     return (
       <div className="chat-page loading-error">
         <div>
-          <p>Unable to connect...</p>
-          <p>Refresh page to tray again.</p>
+          Unable to connect... <br />
+          Refresh page to tray again.
         </div>
         <div className="spinner-sector spinner-sector-red"></div>
 
@@ -22,9 +22,8 @@ export function ChatPage(props) {
   if (!props.joinedRoom) {
     return (
       <div className="chat-page loading">
-        <p>Loading...</p>
+        Loading...
         <div className="spinner-sector spinner-sector-red"></div>
-
         <div className="spinner-sector spinner-sector-blue"></div>
         <div className="spinner-sector spinner-sector-green"></div>
       </div>
