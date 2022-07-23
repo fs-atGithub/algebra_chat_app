@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { ChatPage as Component } from "./ChatPage.component";
 
 export function ChatPage() {
-  const { user, logOutUser } = useUser();
+  const { user } = useUser();
   const [state, setState] = useState([]);
   const [drone, setDrone] = useState(null);
   const [error, setError] = useState(null);

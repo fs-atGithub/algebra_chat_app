@@ -2,7 +2,6 @@ import "./ChatPage.styles.scss";
 
 import { Message } from "../../components/Message";
 import { MessageForm } from "../../components/MessageForm";
-/* import { Button } from "../../components/Button"; */
 
 export function ChatPage(props) {
   if (props.error !== null) {
