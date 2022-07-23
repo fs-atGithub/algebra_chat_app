@@ -50,7 +50,6 @@ export function ChatPage(props) {
         <Button variant="text" onClick={props.logOutUser}>
           Log out
         </Button>
-        <span className="chat-page__count">user count: {props.userCount}</span>
       </div>
       <div className="chat-page__message-list">{messageItems}</div>
       <div className="chat-page__form">

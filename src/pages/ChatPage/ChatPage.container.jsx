@@ -12,7 +12,6 @@ export function ChatPage() {
   const [drone, setDrone] = useState(null);
   const [error, setError] = useState(null);
   const [joinedRoom, setJoinedRoom] = useState(false);
-  const [countMember, setCountMember] = useState([]);
 
   const sendMessage = (formState) => {
     const message = new MessageModel({
@@ -53,24 +52,8 @@ export function ChatPage() {
         MessageModel.fromObject({ ...message.data, id: message.id }),
       ]);
     });
-
-    room.on("members", function (members) {
-      setCountMember([...members]);
-    });
-
-    room.on("member_join", function (member) {
-      setCountMember((current) => {
-        return [...current, member];
-      });
-    });
-
-    room.on("member_leave", function (member) {
-      setCountMember((current) => {
-        return current.filter((leaveMember) => leaveMember.id !== member.id);
-      });
-    });
   }, [drone]);
-  const userCount = countMember.length;
+
   return (
     <Component
       messages={state}
@@ -78,7 +61,6 @@ export function ChatPage() {
       error={error}
       joinedRoom={joinedRoom}
       logOutUser={logOutUser}
-      userCount={userCount}
     />
   );
 }
