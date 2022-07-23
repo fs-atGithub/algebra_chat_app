@@ -60,7 +60,6 @@ export function ChatPage() {
       onSendMessage={sendMessage}
       error={error}
       joinedRoom={joinedRoom}
-      logOutUser={logOutUser}
     />
   );
 }

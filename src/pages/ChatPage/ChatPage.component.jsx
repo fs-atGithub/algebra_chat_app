@@ -45,12 +45,7 @@ export function ChatPage(props) {
 
   return (
     <div className="chat-page">
-      <div className="chat-page__title">
-        Chat about Fronend development
-        <Button variant="text" onClick={props.logOutUser}>
-          Log out
-        </Button>
-      </div>
+      <div className="chat-page__title">Chat about Fronend development</div>
       <div className="chat-page__message-list">{messageItems}</div>
       <div className="chat-page__form">
         <MessageForm onSend={props.onSendMessage} />

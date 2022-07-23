@@ -11,7 +11,9 @@ export function Provider(props) {
     setState(new User({ displayName: userFormData.displayName }));
   };
   const logOutUser = () => {
-    setState(null);
+    console.log(state);
+
+    setState({ displayName: "", avatarBackgroundColor: "", avatarText: "" });
   };
 
   const value = {
