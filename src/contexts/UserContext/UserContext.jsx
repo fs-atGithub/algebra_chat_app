@@ -9,17 +9,17 @@ export function Provider(props) {
 
   const setUser = (userFormData) => {
     setState(new User({ displayName: userFormData.displayName }));
-  }
+  };
+  const logOutUser = () => {
+    setState(null);
+  };
 
   const value = {
     joined: state !== null,
     setUser,
     user: state,
+    logOutUser,
   };
 
-  return (
-    <Context.Provider value={value}>
-      {props.children}
-    </Context.Provider>
-  );
+  return <Context.Provider value={value}>{props.children}</Context.Provider>;
 }
