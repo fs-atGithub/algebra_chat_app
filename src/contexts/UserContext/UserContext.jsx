@@ -10,16 +10,11 @@ export function Provider(props) {
   const setUser = (userFormData) => {
     setState(new User({ displayName: userFormData.displayName }));
   };
-  
-
-    console.log(state);
-  };
 
   const value = {
     joined: state !== null,
     setUser,
     user: state,
-    logOutUser,
   };
 
   return <Context.Provider value={value}>{props.children}</Context.Provider>;
