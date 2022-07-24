@@ -12,6 +12,7 @@ export function Provider(props) {
   };
   const logOutUser = () => {
     setState(null);
+
     console.log(state);
   };
 

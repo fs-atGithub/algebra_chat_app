@@ -3,32 +3,15 @@ import "./ChatPage.styles.scss";
 import { Message } from "../../components/Message";
 import { MessageForm } from "../../components/MessageForm";
 import { Button } from "../../components/Button";
+import Spinner from "../../components/Spinner/Spinner.component";
 
 export function ChatPage(props) {
   if (props.error !== null) {
-    return (
-      <div className="chat-page loading-error">
-        <div>
-          Unable to connect... <br />
-          Refresh page to tray again.
-        </div>
-        <div className="spinner-sector spinner-sector-red"></div>
-
-        <div className="spinner-sector spinner-sector-blue"></div>
-        <div className="spinner-sector spinner-sector-green"></div>
-      </div>
-    );
+    return <Spinner status="Unable to connect..." />;
   }
 
   if (!props.joinedRoom) {
-    return (
-      <div className="chat-page loading">
-        Loading...
-        <div className="spinner-sector spinner-sector-red"></div>
-        <div className="spinner-sector spinner-sector-blue"></div>
-        <div className="spinner-sector spinner-sector-green"></div>
-      </div>
-    );
+    return <Spinner status="Loading..." />;
   }
   const messageItems = props.messages.map((message) => (
     <div key={message.id} className="chat-page__message-list-item">
