@@ -2,7 +2,6 @@ import "./ChatPage.styles.scss";
 
 import { Message } from "../../components/Message";
 import { MessageForm } from "../../components/MessageForm";
-import { Button } from "../../components/Button";
 import Spinner from "../../components/Spinner/Spinner.component";
 
 export function ChatPage(props) {
@@ -30,10 +29,7 @@ export function ChatPage(props) {
     <div className="chat-page">
       <div className="chat-page__title">
         Chat about Fronend development
-        <Button variant="text" onClick={props.logOutUser}>
-          Log out
-        </Button>
-        <span className="chat-page__count">user count: {props.userCount}</span>
+        <p className="chat-page__count">user count: {props.userCount}</p>
       </div>
       <div className="chat-page__message-list">{messageItems}</div>
       <div className="chat-page__form">
