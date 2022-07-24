@@ -10,8 +10,7 @@ export function Provider(props) {
   const setUser = (userFormData) => {
     setState(new User({ displayName: userFormData.displayName }));
   };
-  const logOutUser = () => {
-    setState(null);
+  
 
     console.log(state);
   };
